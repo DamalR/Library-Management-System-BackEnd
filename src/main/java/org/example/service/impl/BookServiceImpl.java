@@ -18,7 +18,6 @@ public class BookServiceImpl implements BookService {
 
     final BookRepository repository;
 
-
     ModelMapper mapper;
 
     @Bean
@@ -33,6 +32,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookEntity> getBooks() {
+
         return (List<BookEntity>) repository.findAll();
     }
 

@@ -5,7 +5,6 @@ import org.example.entity.BookEntity;
 import org.example.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,6 +21,7 @@ public class BookController {
     }
     @GetMapping("/get")
     public Iterable<BookEntity> getBooks(){
+
         return service.getBooks();
     }
     @DeleteMapping("/{id}")
@@ -33,6 +33,5 @@ public class BookController {
     @GetMapping("search/{id}")
     public Book getBookById(@PathVariable Long id){
         return service.getBookById(id);
-
     }
 }
